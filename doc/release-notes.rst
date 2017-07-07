@@ -17,14 +17,11 @@ Major Changes from Kraken
 -------------------------
 
 - *General*:
-
   * Ceph now has a simple, built-in web-based dashboard for monitoring
     cluster status.  FIXME DOCS.
 
 - *RADOS*:
-
   * *BlueStore*:
-
     - The new *BlueStore* backend for *ceph-osd* is now stable and the new
       default for newly created OSDs.  BlueStore manages data stored by each OSD
       by directly managing the physical HDDs or SSDs without the use of an
@@ -35,12 +32,9 @@ Major Changes from Kraken
     - BlueStore supports inline compression using zlib, snappy, or LZ4.  (Ceph
       also supports zstd for RGW compression but zstd is not recommended for
       BlueStore for performance reasons.)  FIXME DOCS
-
   * *Erasure coded* pools now have full support for *overwrites*,
     allowing them to be used with RBD and CephFS.  `Read more about EC overwrites`_.
-
   * *ceph-mgr*:
-
     - There is a new daemon, *ceph-mgr*, which is a required part of any
       Ceph deployment.  Although IO can continue when *ceph-mgr* is
       down, metrics will not refresh and some metrics-related calls
@@ -49,7 +43,6 @@ Major Changes from Kraken
     - The *ceph-mgr* daemon includes a REST-based management API.  The
       API is still experimental and somewhat limited but will form the basis
       for API-based management of Ceph going forward.  FIXME DOCS
-
   * The overall *scalability* of the cluster has improved. We have
     successfully tested clusters with up to 10,000 OSDs.
   * Each OSD can now have a *device class* associated with it (e.g., `hdd` or
@@ -80,7 +73,6 @@ Major Changes from Kraken
     to work around issues throttling background work.)
 
 - *RGW*:
-
   * RGW *metadata search* backed by ElasticSearch now supports end
     user requests service via RGW itself, and also supports custom
     metadata fields. A query language a set of RESTful APIs were
@@ -105,7 +97,6 @@ Major Changes from Kraken
     namespaces.
 
 - *RBD*:
-
   * RBD now has full, stable support for *erasure coded pools* via the new
     ``--data-pool`` option to ``rbd create``.
   * RBD mirroring's rbd-mirror daemon is now highly available. We
@@ -130,7 +121,6 @@ Major Changes from Kraken
   * Images and Snapshots will now include a creation timestamp
 
 - *CephFS*:
-
   * *Multiple active MDS daemons* is now considered stable.  The number
     of active MDS servers may be adjusted up or down on an active CephFS file
     system.
@@ -143,7 +133,6 @@ Major Changes from Kraken
     cases where the automatic load balancing is not desired or effective.
 
 - *Miscellaneous*:
-
   * Release packages are now being built for *Debian Stretch*.  The
     distributions we build for now includes:
 
@@ -156,7 +145,6 @@ Major Changes from Kraken
     Note that QA is limited to CentOS and Ubuntu (xenial and trusty).
 
   * *CLI changes*:
-
     - The ``ceph -s`` or ``ceph status`` command has a fresh look.
     - ``ceph {osd,mds,mon} versions`` summarizes versions of running daemons.
     - ``ceph {osd,mds,mon} count-metadata <property>`` similarly
